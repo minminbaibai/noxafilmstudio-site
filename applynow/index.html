@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOXA FILM - Apply as a Director</title>
+    <style>
+        /* NOXA FILM Website Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+        :root {
+          --black: #000000;
+          --deep-black: #0a0a0a;
+          --gold: #d4af37;
+          --light-gold: #f8e9a1;
+          --white: #ffffff;
+          --transition-slow: 0.7s ease;
+          --transition-medium: 0.5s ease;
+          --transition-fast: 0.3s ease;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        body {
+          font-family: 'Montserrat', sans-serif;
+          background-color: var(--black);
+          color: var(--white);
+          overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+          font-family: 'Cinzel', serif;
+          font-weight: 700;
+          color: var(--white);
+        }
+
+        a {
+          text-decoration: none;
+          color: var(--white);
+          transition: color var(--transition-fast);
+        }
+
+        a:hover {
+          color: var(--white);
+        }
+
+        .container {
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Navigation */
+        .nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 20px 0;
+          z-index: 1000;
+          transition: background-color var(--transition-medium);
+        }
+
+        .nav.scrolled {
+          background-color: rgba(0, 0, 0, 0.9);
+          backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-family: 'Cinzel', serif;
+          font-size: 24px;
+          font-weight: 700;
+          color: var(--white);
+        }
+
+        .logo span {
+          color: var(--white);
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 30px;
+        }
+
+        .nav-link {
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        /* Apply Director Page Styles */
+        .apply-director {
+          padding-top: 100px;
+          padding-bottom: 100px;
+          background-color: var(--deep-black);
+        }
+
+        .header-image {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          margin-bottom: 40px;
+          border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .apply-director h1 {
+          font-size: clamp(2rem, 4vw, 3rem);
+          text-align: center;
+          margin-bottom: 20px;
+          color: var(--white);
+        }
+
+        .subtitle {
+          text-align: center;
+          font-size: 18px;
+          margin-bottom: 30px;
+          color: var(--white);
+          font-weight: 300;
+        }
+
+        .description {
+          font-size: 16px;
+          line-height: 1.8;
+          margin-bottom: 40px;
+          color: var(--white);
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .application-form {
+          background-color: rgba(0, 0, 0, 0.5);
+          padding: 40px;
+          border: 1px solid rgba(212, 175, 55, 0.2);
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .application-form label {
+          display: block;
+          margin-bottom: 8px;
+          margin-top: 20px;
+          font-weight: 500;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .application-form input[type="text"], 
+        .application-form input[type="email"], 
+        .application-form input[type="url"], 
+        .application-form select, 
+        .application-form textarea {
+          width: 100%;
+          padding: 12px;
+          background-color: rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 0;
+          color: var(--white);
+          font-size: 16px;
+          font-family: 'Montserrat', sans-serif;
+          transition: border-color var(--transition-fast);
+        }
+
+        .application-form input:focus, 
+        .application-form select:focus, 
+        .application-form textarea:focus {
+          outline: none;
+          border-color: var(--white);
+        }
+
+        .application-form textarea {
+          resize: vertical;
+          min-height: 120px;
+        }
+
+        .radio-group {
+          margin-top: 10px;
+        }
+
+        .radio-group label {
+          display: inline-block;
+          margin-right: 20px;
+          font-weight: normal;
+          text-transform: none;
+          letter-spacing: normal;
+        }
+
+        .submit-btn {
+          margin-top: 40px;
+          padding: 15px 30px;
+          background-color: transparent;
+          border: 1px solid var(--white);
+          color: var(--white);
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          cursor: pointer;
+          transition: all var(--transition-fast);
+          width: 100%;
+          font-family: 'Montserrat', sans-serif;
+        }
+
+        .submit-btn:hover {
+          background-color: var(--white);
+          color: var(--black);
+        }
+
+        /* Footer */
+        .footer {
+          padding: 50px 0;
+          background-color: var(--black);
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 30px;
+        }
+
+        .footer-logo {
+          font-family: 'Cinzel', serif;
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        .footer-links {
+          display: flex;
+          gap: 20px;
+        }
+
+        .footer-link {
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .social-links {
+          display: flex;
+          gap: 15px;
+        }
+
+        .social-link {
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          transition: all var(--transition-fast);
+        }
+
+        .social-link:hover {
+          background-color: var(--white);
+          border-color: var(--white);
+        }
+
+        .social-link i {
+          font-size: 14px;
+          color: var(--white);
+          transition: color var(--transition-fast);
+        }
+
+        .social-link:hover i {
+          color: var(--black);
+        }
+
+        .copyright {
+          width: 100%;
+          text-align: center;
+          margin-top: 30px;
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+          .nav-links {
+            display: none;
+          }
+          
+          .footer-content {
+            flex-direction: column;
+            text-align: center;
+          }
+          
+          .application-form {
+            padding: 20px;
+          }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-container">
+            <a href="https://noxafilmstudio.com/index.html" class="logo">NOXA <span>FILM</span></a>
+            <div class="nav-links">
+                <a href="https://noxafilmstudio.com/index.html" class="nav-link">HOME</a>
+                <a href="https://noxafilmstudio.com/index.html#films" class="nav-link">FILMS</a>
+                <a href="https://noxafilmstudio.com/index.html#about" class="nav-link">ABOUT</a>
+                <a href="https://noxafilmstudio.com/index.html#join" class="nav-link">JOIN</a>
+                <a href="https://noxafilmstudio.com/index.html#contact" class="nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Apply as a Director Page -->
+    <section class="apply-director">
+        <div class="container">
+            <img src="images/director_banner.jpg" alt="Director Banner" class="header-image">
+            <h1>Apply to Join as a Director</h1>
+            <p class="subtitle">Step into the frontier of AI-assisted cinema.</p>
+            <p class="description">
+                We are building a new era of visual storytelling — and we are looking for directors who are ready to co-create it.
+                Whether you're an experienced filmmaker or an emerging talent with a clear vision, we invite you to apply to join our collective.
+                We value originality, visual thinking, and the courage to experiment with AI as a narrative tool.
+            </p>
+
+            <form class="application-form" id="applicationForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="location">Country / City</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="portfolio">Portfolio / Website</label>
+                <input type="url" id="portfolio" name="portfolio" required>
+
+                <label for="experience">Directing Experience</label>
+                <select id="experience" name="experience">
+                    <option value="0-2">0–2 Years</option>
+                    <option value="3-5">3–5 Years</option>
+                    <option value="6+">6+ Years</option>
+                    <option value="film-school">Film School Graduate</option>
+                    <option value="no-background">No traditional background, but passionate</option>
+                </select>
+
+                <label>Have you directed a film before?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="directed" value="yes" id="directed_yes"> Yes</label>
+                    <label><input type="radio" name="directed" value="no" id="directed_no"> No</label>
+                </div>
+
+                <label for="vision">Tell us about your visual style or directing vision</label>
+                <textarea id="vision" name="vision" rows="6" placeholder="What kinds of stories do you tell? What inspires your aesthetic?" required></textarea>
+
+                <label for="motivation">Why do you want to work with Noxa Film? (Optional)</label>
+                <textarea id="motivation" name="motivation" rows="4"></textarea>
+
+                <label for="social">Social Media / IMDb / LinkedIn (Optional)</label>
+                <input type="url" id="social" name="social">
+
+                <button type="submit" class="submit-btn" id="submitBtn">SUBMIT APPLICATION</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">NOXA FILM</div>
+                <div class="footer-links">
+                    <a href="https://noxafilmstudio.com/privacy/" class="footer-link">PRIVACY</a>
+                    <a href="https://noxafilmstudio.com/terms/" class="footer-link">TERMS</a>
+                    <a href="https://noxafilmstudio.com/index.html#join" class="footer-link">CONTACT</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/noxafilm/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="copyright">© 2025 NOXA FILM. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navigation and Form Submission -->
+    <script>
+        // Add scrolled class to navigation when scrolling
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission with mailto link
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('applicationForm');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const location = document.getElementById('location').value;
+                const portfolio = document.getElementById('portfolio').value;
+                const experience = document.getElementById('experience').value;
+                const directed = document.querySelector('input[name="directed"]:checked') ? 
+                                document.querySelector('input[name="directed"]:checked').value : 'Not specified';
+                const vision = document.getElementById('vision').value;
+                const motivation = document.getElementById('motivation').value;
+                const social = document.getElementById('social').value;
+                
+                // Build email body
+                const subject = encodeURIComponent(`NOXA FILM Director Application - ${name}`);
+                let body = encodeURIComponent(
+                    `Director Application Details:\n\n` +
+                    `Full Name: ${name}\n` +
+                    `Email Address: ${email}\n` +
+                    `Country / City: ${location}\n` +
+                    `Portfolio / Website: ${portfolio}\n` +
+                    `Directing Experience: ${experience}\n` +
+                    `Has Directed a Film Before: ${directed}\n\n` +
+                    `Visual Style / Directing Vision:\n${vision}\n\n` +
+                    `Motivation to Work with Noxa Film:\n${motivation || 'Not provided'}\n\n` +
+                    `Social Media / IMDb / LinkedIn:\n${social || 'Not provided'}\n\n` +
+                    `Sent from NOXA FILM Application Form`
+                );
+                
+                // Create mailto link
+                const mailtoLink = `mailto:contact@noxafilmstudio.com?subject=${subject}&body=${body}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+            });
+        });
+    </script>
+</body>
+</html>

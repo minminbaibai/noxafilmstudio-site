@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOXA FILM - Submit a Script</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-container">
+            <a href="https://noxafilmstudio.com/index.html" class="logo">NOXA <span>FILM</span></a>
+            <div class="nav-links">
+                <a href="https://noxafilmstudio.com/index.html" class="nav-link">HOME</a>
+                <a href="https://noxafilmstudio.com/index.html#films" class="nav-link">FILMS</a>
+                <a href="https://noxafilmstudio.com/index.html#about" class="nav-link">ABOUT</a>
+                <a href="https://noxafilmstudio.com/index.html#join" class="nav-link">JOIN</a>
+                <a href="https://noxafilmstudio.com/index.html#contact" class="nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <img src="images/script_banner.jpg" alt="Screenplay submission" class="header-image">
+            
+            <h1>Submit Your Screenplay</h1>
+            <p class="subtitle">Share your vision with our innovative studio.</p>
+            
+            <div class="intro-text">
+                <p>NOXA FILM is constantly seeking bold, original screenplays that push the boundaries of visual storytelling. We're particularly interested in narratives that can be enhanced by our unique AI-assisted production approach. Whether you have a completed feature, a promising short, or even just a treatment with strong visual potential, we invite you to submit your work for consideration.</p>
+            </div>
+
+            <form id="scriptForm" action="mailto:contact@noxafilmstudio.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">Project Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="format">Project Format</label>
+                    <select id="format" name="format" required>
+                        <option value="">Select format</option>
+                        <option value="feature">Feature Film (80+ pages)</option>
+                        <option value="short">Short Film (under 40 pages)</option>
+                        <option value="pilot">Series Pilot</option>
+                        <option value="treatment">Treatment/Concept</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Genre (select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="genre" value="drama"> Drama</label>
+                        <label><input type="checkbox" name="genre" value="scifi"> Science Fiction</label>
+                        <label><input type="checkbox" name="genre" value="thriller"> Thriller</label>
+                        <label><input type="checkbox" name="genre" value="horror"> Horror</label>
+                        <label><input type="checkbox" name="genre" value="comedy"> Comedy</label>
+                        <label><input type="checkbox" name="genre" value="fantasy"> Fantasy</label>
+                        <label><input type="checkbox" name="genre" value="other"> Other</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="logline">Logline (one-sentence summary)</label>
+                    <textarea id="logline" name="logline" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="synopsis">Synopsis (brief overview)</label>
+                    <textarea id="synopsis" name="synopsis" rows="6" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="visual_elements">Visual Elements</label>
+                    <textarea id="visual_elements" name="visual_elements" rows="4" placeholder="Describe any unique visual elements, settings, or imagery that would benefit from our AI-assisted approach"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Have you submitted this script elsewhere?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="submitted_elsewhere" value="yes"> Yes</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="referral_source">How did you hear about NOXA FILM?</label>
+                    <select id="referral_source" name="referral_source">
+                        <option value="">Select option</option>
+                        <option value="social">Social Media</option>
+                        <option value="search">Search Engine</option>
+                        <option value="friend">Friend/Colleague</option>
+                        <option value="festival">Film Festival</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="guidelines">
+                    <h2>Submission Guidelines</h2>
+                    <ul>
+                        <li>Scripts must be submitted in PDF format only</li>
+                        <li>Please ensure your script follows industry standard formatting</li>
+                        <li>We accept both WGA and non-WGA registered scripts</li>
+                        <li>Response time varies, but we aim to review all submissions within 4-6 weeks</li>
+                        <li>Due to volume, we cannot provide detailed feedback on all submissions</li>
+                        <li>By submitting, you confirm this is your original work and you have the rights to submit it</li>
+                    </ul>
+                </div>
+                
+                <p class="note">Note: This form will open your email client with the form information. Please attach your script PDF to the email before sending.</p>
+                
+                <button type="submit" class="submit-btn">SUBMIT SCREENPLAY</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">NOXA FILM</div>
+                <div class="footer-links">
+                    <a href="https://noxafilmstudio.com/privacy/" class="footer-link">PRIVACY</a>
+                    <a href="https://noxafilmstudio.com/terms/" class="footer-link">TERMS</a>
+                    <a href="https://noxafilmstudio.com/index.html#join" class="footer-link">CONTACT</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/noxafilm/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="copyright">© 2025 NOXA FILM. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('scriptForm').addEventListener('submit', function(e) {
+            // Prepare email subject and body
+            const name = document.getElementById('name').value;
+            const title = document.getElementById('title').value;
+            const email = document.getElementById('email').value;
+            
+            // Set the email subject
+            this.action = `mailto:contact@noxafilmstudio.com?subject=Script Submission: ${title} by ${name}&body=Please see the attached script and form details below:%0A%0A${this.elements.namedItem('name').name}: ${this.elements.namedItem('name').value}%0A${this.elements.namedItem('email').name}: ${this.elements.namedItem('email').value}%0A${this.elements.namedItem('title').name}: ${this.elements.namedItem('title').value}%0A${this.elements.namedItem('format').name}: ${this.elements.namedItem('format').value}%0A${this.elements.namedItem('logline').name}: ${this.elements.namedItem('logline').value}%0A${this.elements.namedItem('synopsis').name}: ${this.elements.namedItem('synopsis').value}%0A${this.elements.namedItem('visual_elements').name}: ${this.elements.namedItem('visual_elements').value}%0A%0APlease remember to attach your script PDF before sending this email.`;
+        });
+
+        // Add scrolled class to navigation when scrolling
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOXA FILM - Apply as a Director</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-container">
+            <a href="#" class="logo">NOXA <span>FILM</span></a>
+            <div class="nav-links">
+                <a href="#" class="nav-link">HOME</a>
+                <a href="#films" class="nav-link">FILMS</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#join" class="nav-link">JOIN</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Apply as a Director Page -->
+    <section class="apply-director">
+        <div class="container">
+            <img src="/static/images/director_banner.jpg" alt="Director Banner" class="header-image">
+            <h1>Apply to Join as a Director</h1>
+            <p class="subtitle">Step into the frontier of AI-assisted cinema.</p>
+            <p class="description">
+                We are building a new era of visual storytelling — and we are looking for directors who are ready to co-create it.
+                Whether you're an experienced filmmaker or an emerging talent with a clear vision, we invite you to apply to join our collective.
+                We value originality, visual thinking, and the courage to experiment with AI as a narrative tool.
+            </p>
+
+            <div class="success-message" id="successMessage" style="display: none; background-color: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); padding: 20px; margin-bottom: 30px; text-align: center;">
+                Your application has been submitted successfully! We will review your information and get back to you soon.
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none; background-color: rgba(255, 0, 0, 0.1); border: 1px solid rgba(255, 0, 0, 0.3); padding: 20px; margin-bottom: 30px; text-align: center;">
+                There was an error submitting your application. Please try again later.
+            </div>
+
+            <form class="application-form" id="applicationForm" enctype="multipart/form-data">
+                <label>Full Name</label>
+                <input type="text" name="name" required>
+
+                <label>Email Address</label>
+                <input type="email" name="email" required>
+
+                <label>Country / City</label>
+                <input type="text" name="location" required>
+
+                <label>Portfolio / Website</label>
+                <input type="url" name="portfolio" required>
+
+                <label>Directing Experience</label>
+                <select name="experience">
+                    <option value="0-2">0–2 Years</option>
+                    <option value="3-5">3–5 Years</option>
+                    <option value="6+">6+ Years</option>
+                    <option value="film-school">Film School Graduate</option>
+                    <option value="no-background">No traditional background, but passionate</option>
+                </select>
+
+                <label>Have you directed a film before?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="directed" value="yes"> Yes</label>
+                    <label><input type="radio" name="directed" value="no"> No</label>
+                </div>
+
+                <label>Tell us about your visual style or directing vision</label>
+                <textarea name="vision" rows="6" placeholder="What kinds of stories do you tell? What inspires your aesthetic?"></textarea>
+
+                <label>Why do you want to work with Noxa Film? (Optional)</label>
+                <textarea name="motivation" rows="4"></textarea>
+
+                <label>Upload a Sample Film / Short Scene (Optional)</label>
+                <input type="file" name="sample">
+
+                <label>Social Media / IMDb / LinkedIn (Optional)</label>
+                <input type="url" name="social">
+
+                <button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">NOXA FILM</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">PRIVACY</a>
+                <a href="#" class="footer-link">TERMS</a>
+                <a href="#" class="footer-link">CONTACT</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/noxafilm/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">© 2025 NOXA FILM. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navigation and Form Submission -->
+    <script>
+        // Add scrolled class to navigation when scrolling
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission with email notification
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('applicationForm');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                
+                // Send form data to backend
+                fetch('/submit-application', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Show success message
+                        successMessage.style.display = 'block';
+                        errorMessage.style.display = 'none';
+                        form.reset();
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Email would be sent here in production
+                        console.log('Email would be sent to: contact@noxafilmstudio.com');
+                    } else {
+                        // Show error message
+                        errorMessage.textContent = data.message || 'There was an error submitting your application.';
+                        errorMessage.style.display = 'block';
+                        successMessage.style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    errorMessage.textContent = 'Network error. Please try again later.';
+                    errorMessage.style.display = 'block';
+                    successMessage.style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
