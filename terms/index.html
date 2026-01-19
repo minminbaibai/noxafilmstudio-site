@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Terms of Service - NOXA FILM</title>
     <link rel="stylesheet" href="/terms/terms_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/mobile.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -18,6 +19,27 @@
                 <a href="/#about" class="nav-link">ABOUT</a>
                 <a href="/#join" class="nav-link">JOIN</a>
                 <a href="/#contact" class="nav-link">CONTACT</a>
+            </div>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+                <span class="nav-toggle-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+        <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+            <div class="mobile-nav-header">
+                <span>Menu</span>
+                <button class="mobile-nav-close" type="button" aria-label="Close menu">×</button>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="/">Home</a>
+                <a href="/#films">Films</a>
+                <a href="/#about">About</a>
+                <a href="/#join">Join</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://www.frameonfilm.com/explore" target="_blank" rel="noopener noreferrer">Watch on Frameon</a>
             </div>
         </div>
     </nav>
@@ -185,5 +207,6 @@
             <div class="copyright">© 2025 NOXA FILM. All Rights Reserved.</div>
         </div>
     </footer>
+    <script src="/js/mobile-nav.js"></script>
 </body>
 </html>
