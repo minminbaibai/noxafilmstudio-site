@@ -219,6 +219,23 @@ a:hover {
     opacity: 0.8;
 }
 
+.trailer-cta {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 22px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.trailer-cta:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
 .divider {
     width: 100%;
     margin: 30px 0;
