@@ -1,0 +1,9 @@
+{
+  "routes": [
+    { "route": "/privacy", "redirect": "/privacy/", "statusCode": 301 },
+    { "route": "/terms", "redirect": "/terms/", "statusCode": 301 },
+    { "route": "/trailer", "redirect": "/trailer/", "statusCode": 301 },
+    { "route": "/trailer2", "redirect": "/trailer2/", "statusCode": 301 },
+    { "route": "/trailer3", "redirect": "/trailer3/", "statusCode": 301 }
+  ]
+}
