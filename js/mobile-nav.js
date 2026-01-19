@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle')
   const menu = document.querySelector('.mobile-nav')
   const closeBtn = document.querySelector('.mobile-nav-close')
-  const links = document.querySelectorAll('.mobile-nav a')
+  const links = document.querySelectorAll('.mobile-drawer-links a')
 
   if (!toggle || !menu) return
 
