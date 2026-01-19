@@ -77,6 +77,28 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.video-fullscreen-container {
+  position: relative;
+}
+
+.video-fullscreen-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   html, body {
     width: 100%;
@@ -103,7 +125,7 @@
   }
 
   .nav-links {
-    display: none;
+    display: none !important;
   }
 
   .nav-container {
@@ -209,5 +231,9 @@
     font-size: 1rem;
     text-align: center;
     padding: 0 20px;
+  }
+
+  .video-fullscreen-btn {
+    display: inline-flex;
   }
 }

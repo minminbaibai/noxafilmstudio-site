@@ -60,7 +60,7 @@
                     <div class="play-button" id="play-button">
                         <i class="fas fa-play"></i>
                     </div>
-                    <video id="trailer-video" class="trailer-video" style="display: none;" controls>
+                    <video id="trailer-video" class="trailer-video" style="display: none;" controls playsinline webkit-playsinline>
                         <source src="/trailer/videos/mars_trailer.mp4" type="video/mp4">
                      </video>
                 </div>
@@ -82,7 +82,7 @@
                     </p>
                 </div>
                 <div class="character-image">
-                    <video width="100%" autoplay muted loop playsinline>
+                    <video width="100%" autoplay muted loop playsinline webkit-playsinline>
                         <source src="/trailer/videos/eliya_portrait_loop.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -92,7 +92,7 @@
             <div class="cities-section">
                 <h2 class="cities-title">THE FIVE CITIES OF MARS</h2>
                 <div class="cities-image">
-                    <video class="city-video" autoplay muted loop playsinline style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);">
+                    <video class="city-video" autoplay muted loop playsinline webkit-playsinline style="width: 100%; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);">
                         <source src="/trailer/videos/The_Five_Cities_of_Mars.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -114,7 +114,7 @@
                     <a href="/#join" class="footer-link">CONTACT</a>
                 </div>
                 <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.youtube.com/@noxafilm" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
                     <a href="https://www.instagram.com/noxafilm/" class="social-link"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                 </div>
@@ -155,6 +155,7 @@
     });
 });
     </script>
+    <script src="/js/video-fullscreen.js"></script>
     <script src="/js/mobile-nav.js"></script>
 </body>
 </html>
