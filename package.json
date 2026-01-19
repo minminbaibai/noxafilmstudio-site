@@ -1,0 +1,10 @@
+{
+  "name": "noxafilmstudio-site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "build": "node scripts/generate-sitemap.mjs"
+  }
+}
