@@ -55,14 +55,14 @@ document.addEventListener('DOMContentLoaded', function() {
         subscribeBtn.disabled = true;
 
         try {
+            const formBody = new URLSearchParams({
+                email,
+                name,
+                source: 'NOXA_SITE',
+            });
             const response = await fetch('https://www.frameonfilm.com/api/subscribe', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email,
-                    name,
-                    source: 'NOXA_SITE',
-                }),
+                body: formBody,
             });
 
             if (!response.ok) {
